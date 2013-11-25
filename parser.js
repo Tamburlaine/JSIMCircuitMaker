@@ -34,7 +34,7 @@ var parser = (function(){
                 lineNumber += 1;
             }
         }
-        console.log(substrings);
+        //console.log(substrings);
         return substrings;
     }
     
