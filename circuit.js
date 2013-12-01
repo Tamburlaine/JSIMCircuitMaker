@@ -16,23 +16,27 @@ var circuit = function(){
 	
 	var View = function(div, model){
 		
-		//STILL HAVING PROBLEMS HERE
-		var circuitButtFun =function(){
-			$(".circuitButt").onclick=function(){
-				console.log('kipper');
-			}
-		}
-		
 		//initializes the screen's display
 		var buildDisplay=function(){
 			div.append("Circuit:");
 			
 			var circuitInp = $('<br><textarea class = "circuitInp" id = circuitInp width = 200px height = 100px>JSIM code goes here</textarea><br>');
 			var circuitButt = $('<button class = "circuitButt">Click!</button>');
+			
+			circuitButt.onclick=function(){
+				console.log("kipper butt");
+			}
 		
-			circuitButtFun()
+			circuitButtFun(circuitButt)
 			
 			div.append(circuitInp, circuitButt);
+		}
+		
+		//STILL HAVING PROBLEMS HERE
+		var circuitButtFun =function(circuitButt){
+			circuitButt.onclick=function(){
+				console.log('kipper');
+			}
 		}
 
 		return {buildDisplay:buildDisplay}
